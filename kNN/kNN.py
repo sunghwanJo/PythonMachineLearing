@@ -8,7 +8,6 @@ def createDataSet():
     return group, labels
 
 def classify(target, data_set, labels, k):
-    print data_set
     data_set_size = data_set.shape[0]
     diff_matrix = tile(target, (data_set_size, 1)) - data_set
     diff_matrix = diff_matrix ** 2
@@ -25,6 +24,7 @@ def classify(target, data_set, labels, k):
 
 if __name__=='__main__':
     group, labels = createDataSet()
-    classify([1, 1.1], group, labels, 3)
+    result = classify([1, 1.1], group, labels, 3)
+    print result
 
 
